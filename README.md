@@ -6,7 +6,7 @@ Task Tracker web app for a team in an organization.
 
 ## 🚨 Live Site
 
-- https://taskify.vercel.app/
+- https://tskify.vercel.app/
 
 ## 🕹️ Demo
 
@@ -26,7 +26,7 @@ Task Tracker web app for a team in an organization.
 Clone the project
 
 ```bash
-  git clone https://github.com/rupam-seal/taskify.git
+  git clone https://github.com/rupam-seal/tskify.git
 ```
 
 <br>
@@ -34,7 +34,7 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd taskify
+  cd tskify
 
 ```
 
