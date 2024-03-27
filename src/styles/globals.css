@@ -1,0 +1,298 @@
+@custom-media --mediaDesktop (max-width: 2080px);
+@custom-media --mediaLaptop (max-width: 1680px);
+@custom-media --mediaTablet (max-width: 1040px);
+@custom-media --mediaMobile (max-width: 696px);
+@custom-media --mediaMobileLS (max-height: 696px);
+@custom-media --mediaMobileS (max-width: 400px);
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 400;
+  src: url('../assets/fonts/gotham-book.woff2') format('woff2');
+  font-display: block;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 500;
+  src: url('../assets/fonts/gotham-medium.woff2') format('woff2');
+  font-display: block;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  font-weight: 700;
+  src: url('../assets/fonts/gotham-bold.woff2') format('woff2');
+  font-display: block;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Impact';
+  font-weight: 700;
+  src: url('../assets/fonts/impact.woff') format('woff');
+  font-display: block;
+  font-style: normal;
+}
+/*
+1rem = 16px || 100%
+1px = 16/100 = 6.25%
+10px = 6.25%*10 = 62.5%
+Now
+1rem = 10px || 62.5%
+*/
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overscroll-behavior-y: none;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--fontStack);
+  background-color: var(--rgbBackground);
+  transition: var(--backgroundChangeTransitionXS);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  color: var(--colorWhite);
+  background: var(--rgbAccent);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: var(--colorTextExtraLight);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: var(--colorTextLight);
+border-radius: 1rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: var(--rgbPrimary);
+}
+
+/**
+1rem = 10px and 0.1rem = 1px 
+**/
+:root {
+  --rgbBlack: rgb(0, 0, 0);
+  --rgbWhite: rgb(255, 255, 255);
+
+  --bezierFastoutSlowin: cubic-bezier(0.4, 0, 0.2, 1);
+  --durationXS: 200ms;
+  --durationS: 300ms;
+  --durationM: 400ms;
+  --durationL: 600ms;
+  --durationXL: 800ms;
+
+  --backgroundChangeTransitionXS: background-color var(--durationXL)
+    var(--bezierFastoutSlowin);
+  --colorChangeTransitionXS: color var(--durationXL) var(--bezierFastoutSlowin);
+  --borderChangeTransitionXS: border var(--durationXL)
+    var(--bezierFastoutSlowin);
+
+  --systemFontStack: 'system-ui, -apple-system, BlinkMacSystemFont, San Francisco, Roboto, Segoe UI, Ubuntu, Helvetica Neue, sans-serif';
+  --fontStack: 'Gotham', var(--systemFontStack);
+  --fontStackHeader: 'Impact';
+
+  --fontWeightRegular: 400;
+  --fontWeightMedium: 500;
+  --fontWeightBold: 700;
+
+  --fontSizeH0: 14rem;
+  --fontSizeH1: 10rem;
+  --fontSizeH2: 5.8rem;
+  --fontSizeH3: 3.6rem;
+  --fontSizeH4: 2.8rem;
+  --fontSizeH5: 2.4rem;
+  --fontSizeH6: 1.8rem;
+  --fontSizeH7: 1.6rem;
+  --fontSizeBodyXL: 2.2rem;
+  --fontSizeBodyL: 2rem;
+  --fontSizeBodyM: 1.8rem;
+  --fontSizeBodyS: 1.6rem;
+  --fontSizeBodyXS: 1.4rem;
+  --fontSizeBodyXXS: 1.2rem;
+
+  --borderRadius0: 0.5rem;
+  --borderRadius1: 1rem;
+  --borderRadius2: 2rem;
+  --borderRadius4: 4rem;
+  --borderRadius8: 8rem;
+
+  --lineHeightTitle: 1.1;
+  --lineHeightBody: 1.6;
+
+  --viewPortWidth: 100vw;
+  --viewPortHeight: 100vh;
+  --minWidthXXS: 0.5rem;
+  --minWidthS: 25rem;
+  --minWidthM: 40rem;
+  --minWidthL: 45rem;
+  --maxWidthXS: 54rem;
+  --maxWidthS: 56rem;
+  --maxWidthM: 85rem;
+  --maxWidthXM: 90rem;
+  --maxWidthL: 100rem;
+  --maxWidthXL: 168rem;
+
+  --spaceOuter: 6.4rem;
+  --spaceXS: 0.4rem;
+  --spaceS: 0.8rem;
+  --spaceM: 1.6rem;
+  --spaceL: 2.4rem;
+  --spaceXL: 3.2rem;
+  --space2XL: 4.8rem;
+  --space3XL: 6.4rem;
+  --space4XL: 9.6rem;
+  --space5XL: 12.8rem;
+  --space6XL: 19.2rem;
+
+  --zIndex0: 0;
+  --zIndex1: 4;
+  --zIndex2: 8;
+  --zIndex3: 16;
+  --zIndex4: 32;
+  --zIndex5: 64;
+
+  @media (--mediaDesktop) {
+    --fontSizeH0: 12rem;
+    --fontSizeH1: 8rem;
+  }
+
+  @media (--mediaLaptop) {
+    --fontSizeH0: 10rem;
+    --fontSizeH1: 7rem;
+    --fontSizeH2: 5rem;
+    --fontSizeH3: 3.6rem;
+    --fontSizeH4: 2.6rem;
+    --fontSizeH5: 2.2rem;
+  }
+
+  @media (--mediaTablet) {
+    --fontSizeH0: 8rem;
+    --fontSizeH1: 6rem;
+    --fontSizeH2: 4.8rem;
+    --fontSizeH3: 3.2rem;
+    --fontSizeH4: 2.4rem;
+    --fontSizeH5: 2rem;
+    --space6XL: 15rem;
+    --space5XL: 5rem;
+  }
+
+  @media (--mediaMobile) {
+    --fontSizeH0: 7rem;
+    --fontSizeH1: 4rem;
+    --fontSizeH2: 3.4rem;
+    --fontSizeH3: 2.8rem;
+    --fontSizeH4: 2.2rem;
+    --fontSizeH5: 1.8rem;
+    --fontSizeBodyL: 1.7rem;
+    --fontSizeBodyM: 1.6rem;
+    --fontSizeBodyS: 1.4rem;
+    --borderRadius4: 2rem;
+    --borderRadius2: 1rem;
+    --spaceOuter: 2.4rem;
+    --space6XL: 10rem;
+    --space5XL: 4rem;
+  }
+
+  @media (--mediaMobileS) {
+    --fontSizeH0: 6rem;
+    --fontSizeH1: 3.8rem;
+    --fontSizeH2: 2.8rem;
+    --fontSizeH3: 2.4rem;
+    --fontSizeH4: 2rem;
+  }
+}
+
+body.dark {
+  --themeId: 'dark';
+  --rgbBackground: rgb(17, 17, 17);
+  --rgbBackgroundLight: rgb(26, 26, 26);
+  --rgbBackgroundExtraLight: rgba(26, 26, 26, 0.99);
+  --rgbPrimary: rgb(243, 110, 48);
+  --rgbSecondary: rgb(25, 25, 25);
+  --rgbAccent: rgb(243, 110, 48);
+  --rgbText: rgb(255, 255, 255);
+  --rgbButton: rgb(0, 0, 0);
+  --colorWhite: rgb(255, 255, 255);
+  --colorWhiteExtraLight: rgb(255, 255, 255, 0.2);
+  --rgbError: rgb(243, 110, 48);
+  --colorTextTitle: rgb(255, 255, 255, 1);
+  --colorTextBody: rgb(255, 255, 255, 0.8);
+  --colorTextLight: rgb(255, 255, 255, 0.6);
+  --colorTextExtraLight: rgb(255, 255, 255, 0.1);
+  --shadowColor: rgba(25, 25, 25, 0.1);
+  --shadowColor2: rgba(255, 255, 255, 0.05) 0px 0px 0px 1px;
+  --shadowColor3: rgba(234, 76, 137, 0.2) 0px 0px 0px 1px;
+
+  /* CardColors */
+  --card1:rgb(140, 139, 143);
+  --card1Light:rgba(140, 139, 143, 0.8);
+  --card2:rgb(255, 172, 47);
+  --card2Light:rgba(255, 172, 47, 0.8);
+  --card3:rgb(9, 169, 79);
+  --card3Light:rgba(9, 169, 79, 0.8);
+  --card4:rgb(125, 133, 255);
+  --card4Light:rgba(125, 133, 255, 0.8);
+  --card5:rgb(249, 96, 87);
+  --card5Light:rgba(249, 96, 87, 0.8);
+}
+
+body.light {
+  --themeId: 'light';
+  --rgbBackground: rgb(255, 255, 255);
+  --rgbBackgroundLight: rgb(255, 255, 255);
+  --rgbBackgroundExtraLight: rgba(255, 255, 255, 0.99);
+  --rgbPrimary: rgb(243, 110, 48);
+  --rgbSecondary: rgb(255, 255, 255);
+  --rgbAccent: rgb(243, 110, 48);
+  --rgbText: rgb(0, 0, 0);
+  --rgbButton: rgb(0, 0, 0);
+  --colorWhite: rgb(255, 255, 255);
+  --colorWhiteExtraLight: rgb(255, 255, 255, 0.2);
+  --rgbError: rgb(255, 0, 60);
+  --colorTextTitle: rgb(0, 0, 0, 1);
+  --colorTextBody: rgb(0, 0, 0, 0.8);
+  --colorTextLight: rgb(0, 0, 0, 0.6);
+  --colorTextExtraLight: rgb(0, 0, 0, 0.1);
+  --shadowColor: rgba(0, 0, 0, 0.09);
+  --shadowColor2: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+  --shadowColor3: rgba(234, 76, 137, 0.2) 0px 0px 0px 1px;
+
+  /* CardColors */
+  --card1:rgb(140, 139, 143);
+  --card1Light:rgba(140, 139, 143, 0.8);
+  --card2:rgb(255, 172, 47);
+  --card2Light:rgba(255, 172, 47, 0.8);
+  --card3:rgb(9, 169, 79);
+  --card3Light:rgba(9, 169, 79, 0.8);
+  --card4:rgb(125, 133, 255);
+  --card4Light:rgba(125, 133, 255, 0.8);
+  --card5:rgb(249, 96, 87);
+  --card5Light:rgba(249, 96, 87, 0.8);
+}

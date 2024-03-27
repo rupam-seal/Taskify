@@ -1,0 +1,14 @@
+.logo {
+  gap: var(--spaceS);
+  transition: var(--backgroundChangeTransitionXS);
+
+  & .text {
+    text-decoration: none;
+    transition: var(--backgroundChangeTransitionXS);
+  }
+}
+
+.image {
+  width: 3.5rem;
+  height: 3.5rem;
+}

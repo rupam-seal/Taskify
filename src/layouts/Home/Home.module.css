@@ -1,0 +1,18 @@
+.section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  margin-top: var(--spaceXL);
+  direction: column;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.overview {
+  display: flex;
+  flex-wrap: wrap;
+}

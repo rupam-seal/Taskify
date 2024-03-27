@@ -1,0 +1,24 @@
+.icon {
+  color: var(--colorTextBodyTitle);
+  cursor: pointer;
+
+  &[data-type='link'] {
+    color: var(--rgbAccent);
+  }
+
+  &[data-type='button'] {
+    color: var(--colorWhite);
+  }
+
+  &[data-type='white'] {
+    color: var(--rgbBlack);
+  }
+
+  &[data-type='body'] {
+    color: var(--rgbPrimary);
+  }
+
+  &[data-type='text'] {
+    color: var(--colorTextBody);
+  }
+}
