@@ -20,9 +20,11 @@
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-import": "^15.1.0",
     "react": "18.2.0",
+    "react-datepicker": "^6.6.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-    "react-leaflet": "^4.2.1"
+    "react-leaflet": "^4.2.1",
+    "react-select": "^5.8.0"
   },
   "devDependencies": {
     "postcss": "^8.4.16",

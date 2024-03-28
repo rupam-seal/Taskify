@@ -1,0 +1,18 @@
+.section {
+  gap: var(--spaceS);
+
+  & .filters {
+    gap: var(--spaceS);
+    flex-wrap: wrap;
+
+    & .select {
+      gap: var(--spaceS);
+      max-width: 600px;
+    }
+  
+    @media (--mediaMobile) {
+      justify-content: center;
+      gap: var(--spaceXL);
+    }
+  }
+}

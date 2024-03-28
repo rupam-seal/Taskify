@@ -6,200 +6,120 @@
   min-width: var(--minWidthS);
   background-color: var(--rgbBackgroundExtraLight);
   border-radius: 1.5rem;
-  margin: 0em 2rem;
   transition: var(--backgroundChangeTransitionXS);
   box-shadow: var(--shadowColor2);
   border-radius: var(--borderRadius1);
+
+  & .header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0rem;
+    border-top-left-radius: 1.5rem;
+    justify-content: space-between;
+    border-bottom-style: solid;
+    color: var(--colorTextExtraLight);
+    border-width: 0.1rem;
+    margin-bottom: 1rem;
+    
+    &::before {
+      content: '';
+      width: var(--minWidthXXS);
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 100%;
+      border-radius: var(--borderRadius0);
+      border-top-left-radius: var(--borderRadius2);
+    }
+
+    & .count {
+      color: var(--colorWhite);
+      display: flex;
+      position: absolute;
+      right: -2.2rem;
+      top: -1rem;
+      align-items: center;
+      justify-content: center;
+      width: 1rem;
+      height: 1rem;
+      padding: 0.2rem;
+      font-size: 1.1rem;
+      border-radius: 50%;
+    }
+
+    & .options {
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+      font-size: 1.4rem;
+      color: var(--colorTextLight);
+    }
+
+    & .content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      margin-left: 2rem;
+      margin-top: 0.8rem;
+      gap: var(--spaceS);
+    }
+    
+  }
+  
 }
 
-.card .header {
-  position: relative;
-  display: flex;
-  align-items: center;
-  padding: 2rem 0rem;
-  border-top-left-radius: 1.5rem;
-  justify-content: space-between;
-  border-bottom-style: solid;
-  color: var(--colorTextExtraLight);
-  border-width: 0.1rem;
-  margin-bottom: 1rem;
-}
+.pending .header::before, .pending .count { background-color: var(--card1); }
+.inprogress .header::before, .inprogress .count { background-color: var(--card2); }
+.completed .header::before, .completed .count { background-color: var(--card3); }
+.deployed .header::before, .deployed .count { background-color: var(--card4); }
+.deferred .header::before, .deferred .count { background-color: var(--card5); }
 
-.card .header::before {
-  content: '';
-  width: var(--minWidthXXS);
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  height: 100%;
-  border-radius: var(--borderRadius0);
-  border-top-left-radius: var(--borderRadius2);
-}
+.pending .item { background-color: var(--card1Light); }
+.inprogress .item { background-color: var(--card2Light); }
+.completed .item { background-color: var(--card3Light); }
+.deployed .item { background-color: var(--card4Light); }
+.deferred .item { background-color: var(--card5Light); }
 
-.pending
-.card .header::before {
-    background-color: var(--card1);
-}
-
-.inprogress
-.card .header::before {
-    background-color: var(--card2);
-}
-
-.completed
-.card .header::before {
-    background-color: var(--card3);
-}
-
-.deployed
-.card .header::before {
-    background-color: var(--card4);
-}
-
-.deferred
-.card .header::before {
-    background-color: var(--card5);
-}
-
-.pending
-.card .count {
-    background-color: var(--card1);
-    box-shadow: 0rem .4rem 1rem rgba(140, 139, 143, .3);
-}
-
-.inprogress
-.card .count {
-    background-color: var(--card2);
-    box-shadow: 0rem .4rem 1rem rgba(255, 185, 79, .3);
-}
-
-.completed
-.card .count {
-    background-color: var(--card3);
-    box-shadow: 0rem .4rem 1rem rgba(118, 255, 69, .3);
-}
-
-.deployed
-.card .count {
-    background-color: var(--card4);
-    box-shadow: 0rem .4rem 1rem rgba(125, 133, 255, .3);
-}
-
-.deferred
-.card .count {
-    background-color: var(--card5);
-    box-shadow: 0rem .4rem 1rem rgba(255, 149, 125, .3);
-}
-
-.pending .child {
-  background-color: var(--card1Light);
-}
-
-.inprogress .child {
-  background-color: var(--card2Light);
-}
-
-.completed .child {
-  background-color: var(--card3Light);
-}
-
-.deployed .child {
-  background-color: var(--card4Light);
-}
-
-.deferred .child {
-  background-color: var(--card5Light);
-}
-
-.card .content {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  margin-left: 2rem;
-  margin-top: 0.8rem;
-  gap: var(--spaceS);
-}
-
-.itemContent {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  gap: var(--spaceM);
-}
-
-.card .count {
-  color: var(--colorWhite);
-  display: flex;
-  position: absolute;
-  right: -2.2rem;
-  top: -1rem;
-  align-items: center;
-  justify-content: center;
-  width: 1rem;
-  height: 1rem;
-  padding: 0.2rem;
-  font-size: 1.1rem;
-  border-radius: 50%;
-}
-
-.card .options {
-  display: flex;
-  align-items: center;
-  margin-right: 1rem;
-  font-size: 1.4rem;
-  color: var(--colorTextLight);
-}
-
-.child {
+.item {
   display: flex;
   flex-direction: column;
   margin: 0.8rem 1.5rem;
   padding: 2rem 1.2rem;
   border-radius: 0.5rem;
-}
 
-.child .content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin: 0rem;
-}
+  & .itemContent {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    gap: var(--spaceM);
+  }
 
-.itemHeader {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: var(--spaceS);
-}
+  & .itemHeader {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--spaceS);
+  }
 
-.priorityContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--colorWhite);
-}
+  & .itemPriority {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colorWhite);
+  }
 
-.priority {
-  background-color: var(--colorWhiteExtraLight);
-  padding: 0.4rem;
-  border-radius: 0.2rem;
-  box-shadow: var(--shadowColor);
-}
+  & .priority {
+    background-color: var(--colorWhiteExtraLight);
+    padding: 0.4rem;
+    border-radius: 0.2rem;
+    box-shadow: var(--shadowColor);
+  }
 
-.devider {
-  height: 0.1rem;
-  width: 100%;
-  background-color: var(--colorWhiteExtraLight);
-}
-
-.card .new {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem 1.5rem 1rem 1.5rem;
-  color: var(--colorTextLight);
-  font-size: 1.4rem;
-  gap: 0.5rem;
-  font-weight: 700;
-}
-
+  & .devider {
+    height: 0.1rem;
+    width: 100%;
+    background-color: var(--colorWhiteExtraLight);
+  }
+} 
